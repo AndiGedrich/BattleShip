@@ -175,39 +175,32 @@
               <td><input type="button" class="Player1Board" id="J10"></td>
             </tr>
           </table>
-        <table border="2" style="width: 150px; margin-left: 10px; float: left;" >
+        <table class="myBoard" border="2" style="width: 150px; margin-left: 10px; float: left;" >
           <tr>
-            <td><h2>MISSILE COUNT<h2></td>
+            <td><h2>MISSILE COUNT</h2></td>
           </tr>
           <tr>
             <td><input type="number" id="shotCounter"></td>
           </tr>
+          <tr>
+            <td><h2>MY SHIPS</h2></td>
+          </tr>
+          <tr>
+            <td class="transparentBkg">
+              <span><img src="AircraftCarrier.jpg" alt="Aircraft Carrier"  style="" id="myAircraftCarrier"></span>
+              <span><img src="PatrolBoat.jpg" alt="Patrol Boat" style="" id="myPatrolBoat"></span>
+              <span><img src="Battleship.jpg" alt="Battleship" style="" id="myBattleship"></span>
+              <span><img src="Cruiser.jpg" alt="Cruiser" style="" id="myCruiser"></span>
+              <span><img src="Submarine.jpg" alt="Submarine" style="" id="mySubmarine"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="transparentBkg">
+              <button type="button">VIEW MY BOARD</button>
+            </td>
+          </tr>
         </table>
-
-    <table class="myBoard" border="2" style="width: 80px; margin-left: 10px; margin-right: 10px;" >
-          <tr>
-            <td><h2>MY SHIPS<h2></td>
-          </tr>
-          <tr>
-            <td class="shipImage"><img src="AircraftCarrier.jpg" alt="Aircraft Carrier"  style="" id="myAircraftCarrier"</td>
-          </tr>
-          <tr>
-            <td class="shipImage"><img src="Battleship.jpg" alt="Battleship" style="" id="myBattleship"</td>
-          </tr>
-          <tr>
-            <td class="shipImage"><img src="Submarine.jpg" alt="Submarine" style="" id="mySubmarine"</td>
-          </tr>
-          <tr>
-            <td class="shipImage"><img src="Cruiser.jpg" alt="Cruiser" style="" id="myCruiser"</td>
-          </tr>
-          <tr>
-            <td class="shipImage"><img src="PatrolBoat.jpg" alt="Patrol Boat" style="" id="myPatrolBoat"</td>
-          </tr>
-      </table>
-
-
-      </div>
-  </table>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="battleship.js"></script>
 </body>

@@ -9,10 +9,12 @@ h1{
   font-size: 50px;
 }
 h2{
-   text-align: center;
+  text-align: center;
   font-family: Impact;
   color: red;
   font-size: 15px;
+  background-color: #1a3300;
+
 }
 form{
   height: 576px;
@@ -25,9 +27,7 @@ table.shipCount td.shipImage {
   background-color: #002c69;
 }
 
-table.myBoard td.shipImage {
-  background-color: #002c69;
-}
+
 span {
   margin-top: 40px;
   color:white;
@@ -60,4 +60,20 @@ td{
   height: 16px;
   padding: 1px 3px 1px 3px;
   text-align: center;
+}
+
+button{
+  background-color: red;
+  font-family: Impact;
+  width: 148px;
+
+
+}
+.myBoard{
+  width: 150px;
+  height: 25px;
+
+}
+table.myBoard td.transparentBkg {
+  background-color: transparent;
 }
