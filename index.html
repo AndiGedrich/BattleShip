@@ -9,7 +9,7 @@
 <body>
   <form>
   <h1>BATTLE SHIP</h1>
-  <h3>Player 1 Position Ships</h3>
+  <h3>Player 1 Select Ship</h3>
     <div class="hitSelector">
       <table class="shipCount" border="2" style="width: 150px; margin-left: 10px; margin-right: 10px; float: left;" >
           <tr>
@@ -181,18 +181,18 @@
             <td><h2>MISSILE COUNT</h2></td>
           </tr>
           <tr>
-            <td><input type="number" id="shotCounter"></td>
+            <td><input type="number" id="shotCounter" value="25"></td>
           </tr>
           <tr>
             <td><h2>MY SHIPS</h2></td>
           </tr>
           <tr>
             <td class="transparentBkg">
-              <span><img class="shipClick" src="AircraftCarrier.jpg" alt="Aircraft Carrier"  id="myAircraftCarrier" data-value="[#D4, #E4, #F4, #G4, #H4]"></span>
-              <span><img class="shipClick" src="PatrolBoat.jpg" alt="Patrol Boat" id="myPatrolBoat" data-value="[D4, E4, F4, G4]"></span>
-              <span><img class="shipClick" src="Battleship.jpg" alt="Battleship" id="myBattleship" data-value="[D4, E4, F4]"></span>
-              <span><img class="shipClick" src="Cruiser.jpg" alt="Cruiser" id="myCruiser" data-value="[D4, E4, F4]"></span>
-              <span><img class="shipClick" src="Submarine.jpg" alt="Submarine" id="mySubmarine" data-value="[D4, E4]"></span>
+              <span><img class="shipClick" src="AircraftCarrier.jpg" alt="Aircraft Carrier"  id="myAircraftCarrier"></span>
+              <span><img class="shipClick" src="PatrolBoat.jpg" alt="Patrol Boat" id="myPatrolBoat"></span>
+              <span><img class="shipClick" src="Battleship.jpg" alt="Battleship" id="myBattleship"></span>
+              <span><img class="shipClick" src="Cruiser.jpg" alt="Cruiser" id="myCruiser"></span>
+              <span><img class="shipClick" src="Submarine.jpg" alt="Submarine" id="mySubmarine"></span><span><button id="rotate-button" data-direction="0">Rotate Ship</button></span>
             </td>
           </tr>
           <tr>
