@@ -9,6 +9,7 @@
 <body>
   <form>
   <h1>BATTLE SHIP</h1>
+  <h3>Player 1 Position Ships</h3>
     <div class="hitSelector">
       <table class="shipCount" border="2" style="width: 150px; margin-left: 10px; margin-right: 10px; float: left;" >
           <tr>
@@ -30,7 +31,7 @@
             <td class="shipImage"><img src="PatrolBoat.jpg" alt="Patrol Boat" style="" id="PatrolBoat"</td>
           </tr>
       </table>
-      <table border="2" style="width:500px; float: left;">
+      <table class="targetBoard" border="2" style="width:500px; float: left;">
         <tr>
             <td><span>0</span></td>
             <td><span>A</span></td>
@@ -187,21 +188,30 @@
           </tr>
           <tr>
             <td class="transparentBkg">
-              <span><img src="AircraftCarrier.jpg" alt="Aircraft Carrier"  style="" id="myAircraftCarrier"></span>
-              <span><img src="PatrolBoat.jpg" alt="Patrol Boat" style="" id="myPatrolBoat"></span>
-              <span><img src="Battleship.jpg" alt="Battleship" style="" id="myBattleship"></span>
-              <span><img src="Cruiser.jpg" alt="Cruiser" style="" id="myCruiser"></span>
-              <span><img src="Submarine.jpg" alt="Submarine" style="" id="mySubmarine"></span>
+              <span><img class="shipClick" src="AircraftCarrier.jpg" alt="Aircraft Carrier"  id="myAircraftCarrier" data-value="[#D4, #E4, #F4, #G4, #H4]"></span>
+              <span><img class="shipClick" src="PatrolBoat.jpg" alt="Patrol Boat" id="myPatrolBoat" data-value="[D4, E4, F4, G4]"></span>
+              <span><img class="shipClick" src="Battleship.jpg" alt="Battleship" id="myBattleship" data-value="[D4, E4, F4]"></span>
+              <span><img class="shipClick" src="Cruiser.jpg" alt="Cruiser" id="myCruiser" data-value="[D4, E4, F4]"></span>
+              <span><img class="shipClick" src="Submarine.jpg" alt="Submarine" id="mySubmarine" data-value="[D4, E4]"></span>
             </td>
           </tr>
           <tr>
             <td class="transparentBkg">
-              <button type="button">VIEW MY BOARD</button>
+              <button type="button" id="viewToggle">VIEW MY BOARD</button>
             </td>
           </tr>
         </table>
   </div>
+
+  <div id="myShipLayout">
+
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="battleship.js"></script>
-</body>
+  <script type="text/javascript">
+    $(function() {
+        $('#myShipLayout').hide();
+      });
+    </script>
+    <script src="battleship.js"></script>
+  </body>
 </html>
