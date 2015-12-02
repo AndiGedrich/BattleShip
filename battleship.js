@@ -17,27 +17,30 @@ var ships= {
 
 var keys = Object.keys(ships);
 console.log (ships);
+console.log (keys);
 
 $('.Player1Board').click(function(){
   document.getElementById("shotCounter").value-=1;
   console.log ("shot value:" + this.id);
   var shot= this.id;
   console.log (shot);
-  for(var i in keys){
+  var hit= false;
+  for(i in keys){
     var key = keys [i];
     var buttons = ships[key];
-    }
     for (var j in buttons){
       var button = buttons[j];
-    }
       if(shot === button){
+        hit = true;
         document.querySelector("h3").innerHTML= "HIT!";
         document.getElementById(shot).value="X";
         document.getElementById(shot).style.background="red";
         document.getElementById(shot).disabled="disabled";
         }
+      }
+    }
 
-    else{
+    if (!hit) {
         document.querySelector("h3").innerHTML= "MISS";
         document.getElementById(shot).style.background="white";
         document.getElementById(shot).disabled="disabled";
