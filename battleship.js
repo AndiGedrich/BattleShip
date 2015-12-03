@@ -16,8 +16,8 @@ var ships= {
 }
 
 var keys = Object.keys(ships);
-console.log (ships);
-console.log (keys);
+//console.log ("Ships:" + ships);
+console.log ("Keys:" + keys);
 
 $('.Player1Board').click(function(){
   document.querySelector("h3").innerHTML= " ";
@@ -47,17 +47,19 @@ $('.Player1Board').click(function(){
       document.getElementById(shot).style.background="white";
       document.getElementById(shot).disabled="disabled";
   }
-
+  var shipCount = 0;
   for (i in keys){
     var key = keys [i];
-    // do something
-    hitCount = 0;
+    var shipHitCount = 0;
     for (j in ships[key]){
       if ($('#' + ships[key][j]).hasClass('Player1BoardhitShipCell')) {
-        hitCount += 1
+        shipHitCount += 1;
+
       }
     }
-    if (ships[key].length === hitCount) {
+    if (ships[key].length === shipHitCount) {
+        shipCount +=1;
+        console.log ("Hit Count:" + shipHitCount);
         console.log('SUNK!');
         sunkShipId = key;
         console.log ("SunkShip:" + sunkShipId);
@@ -65,20 +67,16 @@ $('.Player1Board').click(function(){
         document.getElementById(sunkShipId).src = key + "_sunk.jpg";
         var attShip= document.createAttribute("class");
           attShip.value = "Sunk";
-          document.getElementById(sunkShipId).className += "Sunk";
-        var checkWinner = function (){
-          if ($('#AircraftCarrier').hasClass('Sunk') &&
-              $('#Battleship').hasClass('Sunk') &&
-              $('#Submarine').hasClass('Sunk') &&
-              $('#Cruiser').hasClass('Sunk') &&
-              $('#PatrolBoat').hasClass('Sunk')) {
-                document.querySelector("h3").innerHTML= "PLAY 1 WINS";
-                location.reload();
-              }
-          }
-    }
-   }
+          document.getElementById(sunkShipId).className = "Sunk";
+        }
 
+    if (keys.length === shipCount){
+      document.querySelector("h3").innerHTML= key + "PLAYER 1 WINS!";
+      setTimeout(function () {
+        location.reload();
+      }, 3000)
+      }
+    }
   })
 });
 
@@ -91,7 +89,7 @@ $('.Player1Board').click(function(){
 //       this.shipLength = 5;
 //       break;
 //     case CONST.AVAILABLE_SHIPS[1]:
-//       this.shipLength = 4;
+//      this.shipLength = 4;
 //       break;
 //     case CONST.AVAILABLE_SHIPS[2]:
 //       this.shipLength = 3;
