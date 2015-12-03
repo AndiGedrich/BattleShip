@@ -176,7 +176,7 @@
               <td><input type="button" class="Player1Board" id="J10"></td>
             </tr>
           </table>
-        <table class="myBoard" border="2" style="width: 150px; margin-left: 10px; float: left;" >
+        <table class="myScoreBoard" border="2" style="width: 150px; margin-left: 10px; float: left;" >
           <tr>
             <td><h2>MISSILE COUNT</h2></td>
           </tr>
@@ -188,11 +188,11 @@
           </tr>
           <tr>
             <td class="transparentBkg">
-              <span class="shipClick"><img src="AircraftCarrier.jpg" alt="Aircraft Carrier"  id="myAircraftCarrier"></span>
-              <span class="shipClick"><img src="PatrolBoat.jpg" alt="Patrol Boat" id="myPatrolBoat"></span>
-              <span class="shipClick"><img src="Battleship.jpg" alt="Battleship" id="myBattleship"></span>
-              <span class="shipClick"><img src="Cruiser.jpg" alt="Cruiser" id="myCruiser"></span>
-              <span class="shipClick"><img src="Submarine.jpg" alt="Submarine" id="mySubmarine"></span><span class="shipClick"><button id="rotate-button" data-direction="0">Rotate Ship</button></span>
+              <span class="shipClick"><img src="AircraftCarrier.jpg" alt="Aircraft Carrier"  id="myAircraftCarrier" data-locations='[0,0,0,0,0]'></span>
+              <span class="shipClick"><img src="PatrolBoat.jpg" alt="Patrol Boat" id="myPatrolBoat" data-locations='[0,0]'></span>
+              <span class="shipClick"><img src="Battleship.jpg" alt="Battleship" id="myBattleship" data-locations='[0,0,0,0]'></span>
+              <span class="shipClick"><img src="Cruiser.jpg" alt="Cruiser" id="myCruiser" data-locations='[0,0,0]'></span>
+              <span class="shipClick"><img src="Submarine.jpg" alt="Submarine" id="mySubmarine" data-locations='[0,0,0]'></span><span class="shipClick"><button id="rotate-button" data-direction="0">Rotate Ship</button></span>
             </td>
           </tr>
           <tr>
@@ -202,16 +202,154 @@
           </tr>
         </table>
   </div>
-
-  <div id="myShipLayout">
-
+<div id="myShipLayout" style="display: none">
+  <table class="myGameBoard" border="2" style="width:500px;">
+        <tr>
+            <td><span>0</span></td>
+            <td><span>K</span></td>
+            <td><span>L</span></td>
+            <td><span>M</span></td>
+            <td><span>N</span></td>
+            <td><span>O</span></td>
+            <td><span>P</span></td>
+            <td><span>Q</span></td>
+            <td><span>R</span></td>
+            <td><span>S</span></td>
+            <td><span>T</span></td>
+        </tr>
+        <tr>
+              <td><span>1</span></td>
+              <td><input type="button" class="myBoard" id="K1"></td>
+              <td><input type="button" class="myBoard" id="L1"></td>
+              <td><input type="button" class="myBoard" id="M1"></td>
+              <td><input type="button" class="myBoard" id="N1"></td>
+              <td><input type="button" class="myBoard" id="O1"></td>
+              <td><input type="button" class="myBoard" id="P1"></td>
+              <td><input type="button" class="myBoard" id="Q1"></td>
+              <td><input type="button" class="myBoard" id="R1"></td>
+              <td><input type="button" class="myBoard" id="S1"></td>
+              <td><input type="button" class="myBoard" id="T1"></td>
+            </tr>
+        <tr>
+              <td><span>2</span></td>
+              <td><input type="button" class="myBoard" id="K2"></td>
+              <td><input type="button" class="myBoard" id="L2"></td>
+              <td><input type="button" class="myBoard" id="M2"></td>
+              <td><input type="button" class="myBoard" id="N2"></td>
+              <td><input type="button" class="myBoard" id="O2"></td>
+              <td><input type="button" class="myBoard" id="P2"></td>
+              <td><input type="button" class="myBoard" id="Q2"></td>
+              <td><input type="button" class="myBoard" id="R2"></td>
+              <td><input type="button" class="myBoard" id="S2"></td>
+              <td><input type="button" class="myBoard" id="T2"></td>
+            </tr>
+        <tr>
+              <td><span>3</span></td>
+              <td><input type="button" class="myBoard" id="K3"></td>
+              <td><input type="button" class="myBoard" id="L3"></td>
+              <td><input type="button" class="myBoard" id="M3"></td>
+              <td><input type="button" class="myBoard" id="N3"></td>
+              <td><input type="button" class="myBoard" id="O3"></td>
+              <td><input type="button" class="myBoard" id="P3"></td>
+              <td><input type="button" class="myBoard" id="Q3"></td>
+              <td><input type="button" class="myBoard" id="R3"></td>
+              <td><input type="button" class="myBoard" id="S3"></td>
+              <td><input type="button" class="myBoard" id="T3"></td>
+            </tr>
+        <tr>
+              <td><span>4</span></td>
+              <td><input type="button" class="myBoard" id="K4"></td>
+              <td><input type="button" class="myBoard" id="L4"></td>
+              <td><input type="button" class="myBoard" id="M4"></td>
+              <td><input type="button" class="myBoard" id="N4"></td>
+              <td><input type="button" class="myBoard" id="O4"></td>
+              <td><input type="button" class="myBoard" id="P4"></td>
+              <td><input type="button" class="myBoard" id="Q4"></td>
+              <td><input type="button" class="myBoard" id="R4"></td>
+              <td><input type="button" class="myBoard" id="S4"></td>
+              <td><input type="button" class="myBoard" id="T4"></td>
+            </tr>
+        <tr>
+              <td><span>5</span></td>
+              <td><input type="button" class="myBoard" id="K5"></td>
+              <td><input type="button" class="myBoard" id="L5"></td>
+              <td><input type="button" class="myBoard" id="M5"></td>
+              <td><input type="button" class="myBoard" id="N5"></td>
+              <td><input type="button" class="myBoard" id="O5"></td>
+              <td><input type="button" class="myBoard" id="P5"></td>
+              <td><input type="button" class="myBoard" id="Q5"></td>
+              <td><input type="button" class="myBoard" id="R5"></td>
+              <td><input type="button" class="myBoard" id="S5"></td>
+              <td><input type="button" class="myBoard" id="T5"></td>
+            </tr>
+        <tr>
+              <td><span>6</span></td>
+              <td><input type="button" class="myBoard" id="K6"></td>
+              <td><input type="button" class="myBoard" id="L6"></td>
+              <td><input type="button" class="myBoard" id="M6"></td>
+              <td><input type="button" class="myBoard" id="N6"></td>
+              <td><input type="button" class="myBoard" id="O6"></td>
+              <td><input type="button" class="myBoard" id="P6"></td>
+              <td><input type="button" class="myBoard" id="Q6"></td>
+              <td><input type="button" class="myBoard" id="R6"></td>
+              <td><input type="button" class="myBoard" id="S6"></td>
+              <td><input type="button" class="myBoard" id="T6"></td>
+            </tr>
+        <tr>
+              <td><span>7</span></td>
+              <td><input type="button" class="myBoard" id="K7"></td>
+              <td><input type="button" class="myBoard" id="L7"></td>
+              <td><input type="button" class="myBoard" id="M7"></td>
+              <td><input type="button" class="myBoard" id="N7"></td>
+              <td><input type="button" class="myBoard" id="O7"></td>
+              <td><input type="button" class="myBoard" id="P7"></td>
+              <td><input type="button" class="myBoard" id="Q7"></td>
+              <td><input type="button" class="myBoard" id="R7"></td>
+              <td><input type="button" class="myBoard" id="S7"></td>
+              <td><input type="button" class="myBoard" id="T7"></td>
+            </tr>
+        <tr>
+              <td><span>8</span></td>
+              <td><input type="button" class="myBoard" id="K8"></td>
+              <td><input type="button" class="myBoard" id="L8"></td>
+              <td><input type="button" class="myBoard" id="M8"></td>
+              <td><input type="button" class="myBoard" id="N8"></td>
+              <td><input type="button" class="myBoard" id="O8"></td>
+              <td><input type="button" class="myBoard" id="P8"></td>
+              <td><input type="button" class="myBoard" id="Q8"></td>
+              <td><input type="button" class="myBoard" id="R8"></td>
+              <td><input type="button" class="myBoard" id="S8"></td>
+              <td><input type="button" class="myBoard" id="T8"></td>
+            </tr>
+        <tr>
+              <td><span>9</span></td>
+              <td><input type="button" class="myBoard" id="K9"></td>
+              <td><input type="button" class="myBoard" id="L9"></td>
+              <td><input type="button" class="myBoard" id="M9"></td>
+              <td><input type="button" class="myBoard" id="N9"></td>
+              <td><input type="button" class="myBoard" id="O9"></td>
+              <td><input type="button" class="myBoard" id="P9"></td>
+              <td><input type="button" class="myBoard" id="Q9"></td>
+              <td><input type="button" class="myBoard" id="R9"></td>
+              <td><input type="button" class="myBoard" id="S9"></td>
+              <td><input type="button" class="myBoard" id="T9"></td>
+            </tr>
+        <tr>
+              <td><span>10</span></td>
+              <td><input type="button" class="myBoard" id="K10"></td>
+              <td><input type="button" class="myBoard" id="L10"></td>
+              <td><input type="button" class="myBoard" id="M10"></td>
+              <td><input type="button" class="myBoard" id="N10"></td>
+              <td><input type="button" class="myBoard" id="O10"></td>
+              <td><input type="button" class="myBoard" id="P10"></td>
+              <td><input type="button" class="myBoard" id="Q10"></td>
+              <td><input type="button" class="myBoard" id="R10"></td>
+              <td><input type="button" class="myBoard" id="S10"></td>
+              <td><input type="button" class="myBoard" id="T10"></td>
+            </tr>
+          </table>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-        $('#myShipLayout').hide();
-      });
-    </script>
     <script src="battleship.js"></script>
   </body>
 </html>

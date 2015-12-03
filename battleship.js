@@ -1,11 +1,50 @@
 $(function(){
   console.log("main js loaded.");
 
+// var Player1;
+// var myShips= {
+//   AircraftCarrier:["", "", "","",""],
+//   Battleship:["", "", "",""],
+//   Submarine:["", "", ""],
+//   Cruiser:["", "", ""],
+//   PatrolBoat:["", ""],
+// }
+// var playerBoardSetUp = $('.shipClick').click(function(){
+//   console.log ("Ship ID:" + this.id);
+//   var shipSelected = this.id;
+//   document.getElementById(shipSelected)
+//   for (var i = 0; i< shipSelected.length; i++){
+//     var classes = ships[i].getAttribute('class') || ' ';
+//     classes = classes.replace('placing', '');
+//     shipSelected[i].setAttribute('class', classes);
+//     console.log ("ship length:" + length);
+//     }
+//   $('h3').html("Choose Location on the Board");
+//   $('.Player1Board').click(function(){
+//     console.log (this.id);
+//     var shipLocation = this.id;
+//     (function(){
+//       shipLocation.removeClass('Player1Board').addClass('shipLocationClass');
+//       //$('.shipLocationClass').css("background-color": "#666666");
+//     })
+//   })
+// })
+
+$('#viewToggle').click(function(){
+  console.log("toggle clicked");
+  $('#viewToggle').html("Hide my Board");
+  document.getElementById('myShipLayout').style.display = "block";
+  document.getElementById('viewToggle').id = "viewToggleOn";
+  })
+
+$('#viewToggleOn').click(function(){
+  console.log("toggle off clicked");
+  $('#viewToggle').html("Show my Board");
+  document.getElementById('myShipLayout').style.display = "none";
+  document.getElementById('viewToggleOn').id = "viewToggle";
+  })
 
 // dummy board
-
-//shot counter
-
 
 var ships= {
   AircraftCarrier:["C3", "C4", "C5","C6","C7"],
@@ -54,7 +93,6 @@ $('.Player1Board').click(function(){
     for (j in ships[key]){
       if ($('#' + ships[key][j]).hasClass('Player1BoardhitShipCell')) {
         shipHitCount += 1;
-
       }
     }
     if (ships[key].length === shipHitCount) {
@@ -78,60 +116,18 @@ $('.Player1Board').click(function(){
       }
     }
   })
-});
+ });
 
 
-//   var CONST = {};
-//   CONST.AVAILABLE_SHIPS = ['myAircraftCarrier', 'myBattleship','myCruiser', 'mySubmarine', 'myPatrolBoat'];
+//computer hit / miss
+//computer ship sink & win
+//shot count = o end game
 
-//   switch (this.type) {
-//     case CONST.AVAILABLE_SHIPS[0]:
-//       this.shipLength = 5;
-//       break;
-//     case CONST.AVAILABLE_SHIPS[1]:
-//      this.shipLength = 4;
-//       break;
-//     case CONST.AVAILABLE_SHIPS[2]:
-//       this.shipLength = 3;
-//       break;
-//     case CONST.AVAILABLE_SHIPS[3]:
-//       this.shipLength = 3;
-//       break;
-//     case CONST.AVAILABLE_SHIPS[4]:
-//       this.shipLength = 2;
-//       break;
-//     default:
-//       this.shipLength = 3;
-//       break;
-//   }
-
-// var ships = $('.shipClick');
-
-// $('.shipClick').click(function(){
-//     console.log ("Ship ID:" + this.id);
-//     var shipSelected = this.id;
-//     for (var i = 0; i< shipSelected.length; i++){
-//       var classes = ships[i].getAttribute('class') || ' ';
-//       classes = classes.replace('placing', '');
-//       shipSelected[i].setAttribute('class', classes);
-//       console.log ("ship length:" + length);
-//       }
-//   $('h3').html("Choose Location on the Board");
-//   $('.Player1Board').click(function(){
-//     console.log (this.id);
-//     var shipLocation = this.id;
-//     (function(){
-//       shipLocation.removeClass('Player1Board').addClass('shipLocationClass');
-//       //$('.shipLocationClass').css("background-color": "#666666");
-//     })
-//   })
-// })
+//bugs H3 alerts
+//
 
 
 
 
 
-  // $('#myShipLayout').click(function(){
-  //   $('#viewToggle').toggle();
-  // }
 

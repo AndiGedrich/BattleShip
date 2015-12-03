@@ -1,5 +1,8 @@
 html{
   background-color: black;
+  background-image: url("background1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 h1{
   margin-top: 10px;
@@ -31,9 +34,8 @@ h3{
 
 form{
   height: 576px;
-  background-image: url("background1.jpg");
   align: center;
-  background-repeat: no-repeat;
+
 }
 
 table.shipCount td.shipImage {
@@ -67,8 +69,13 @@ input {
 
 td{
   background-color: #1a3300;
+
   height: 36px;
   width: 36px;
+}
+
+.targetBoard{
+  opacity: 0.6;
 }
 
 .Player1Board{
@@ -89,7 +96,7 @@ button{
 
 
 }
-.myBoard{
+.myScoreBoard{
   width: 150px;
   height: 25px;
 
@@ -107,3 +114,20 @@ table.myBoard td.transparentBkg {
   color: black;
 
 }
+
+#myShipLayout {
+  width:500px;
+  margin-top: 20px;
+  margin-left: 169px;
+}
+
+.myBoard {
+  background-color: #274d00;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  padding: 1px 3px 1px 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
