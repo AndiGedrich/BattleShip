@@ -1,14 +1,14 @@
 $(function(){
   console.log("main js loaded.");
 
-// var Player1;
-// var myShips= {
-//   AircraftCarrier:["", "", "","",""],
-//   Battleship:["", "", "",""],
-//   Submarine:["", "", ""],
-//   Cruiser:["", "", ""],
-//   PatrolBoat:["", ""],
-// }
+var Player1;
+var myShips= {
+  AircraftCarrier:["O9", "P9", "Q9","R9","S9"],
+  Battleship:["S2", "S3", "S4","S5"],
+  Submarine:["L7", "L8", "L9"],
+  Cruiser:["N2", "N3", "N4"],
+  PatrolBoat:["K2", "K4"],
+}
 // var playerBoardSetUp = $('.shipClick').click(function(){
 //   console.log ("Ship ID:" + this.id);
 //   var shipSelected = this.id;

@@ -69,7 +69,6 @@ input {
 
 td{
   background-color: #1a3300;
-
   height: 36px;
   width: 36px;
 }
@@ -129,5 +128,9 @@ table.myBoard td.transparentBkg {
   padding: 1px 3px 1px 3px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.occupied {
+  background-color: #666666;
 }
 
