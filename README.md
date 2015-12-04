@@ -2,6 +2,9 @@ Play the game online!
 
 http://andigedrich.github.io/BattleShip/
 
+Trello Board:
+https://trello.com/b/KoV89aa2/wdi-game-project
+
 
 #Project #1: Battleship 
 
@@ -23,7 +26,7 @@ BUGS:
 
 - Toggle button for "View My Board" to hide when clicked second time.
 
-- My Ships not displaying own sunk ships
+- My Ships not displaying own sunk ships (worked in computer play, so need to check css classes.
 
 - Too much delay on end of game so it shows next player screen first. 
 
