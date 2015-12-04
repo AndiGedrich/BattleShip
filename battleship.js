@@ -136,6 +136,16 @@ $('.Player1Board').click(function(){ //problem here
 
   //PLAYER 2 TURN
 
+var Player2Turn = function (){
+  document.querySelector('.player2Form').style.display = "block";
+  document.querySelector('.player1Form').style.display = "none";
+}
+
+var Player1Turn = function () {
+    document.querySelector('.player1Form').style.display = "block";
+  document.querySelector('.player2Form').style.display = "none";
+}
+
 var myShips= {
   AircraftCarrier:["O9", "P9", "Q9","R9","S9"],
   Battleship:["S2", "S3", "S4","S5"],
@@ -144,55 +154,47 @@ var myShips= {
   PatrolBoat:["K2", "K4"],
 }
 
-var Player2Turn = function (){
-  document.querySelector('.player2Form').style.display = "block";
-  document.querySelector('.player1Form').style.display = "none";
-  player2Shot();
-}
-
-  var player2Shot = function (){
-  var keys = Object.keys(MyShips);
-  console.log ("Keys:" + keys);
-
-$('.Player2Board').click(function(){ //problem here
+    $('.Player2Board').click(function(){ //problem here
+      console.log ("Player 2 Keys:" + keys);
+      var keys = Object.keys(myShips);
     //document.querySelector("h3").innerHTML= "PLAYER 1 FIRE!";
-    document.getElementById("shotCounter").value-=1;
-    console.log ("shot value:" + this.id);
-    var shot= this.id;
-    console.log (shot);
-    var hit= false;
-    for(i in keys){
-      var key = keys [i];
-      var buttons = MyShips[key];
-      for (var j in buttons){
-        var button = buttons[j];
-        if(shot === button){
-          hit = true;
-          document.querySelector("h3").innerHTML= "HIT!";
-          var att= document.createAttribute("class");
-            att.value = "hitShipCell";
-            document.getElementById(shot).className += "hitShipCell";
-            document.getElementById(shot).value="X";
-            document.getElementById(shot).disabled="disabled";
+      document.getElementById("shotCounter2").value-=1;
+      console.log ("shot value:" + this.id);
+      var shot= this.id;
+      console.log ("Player 2 Shot: " + shot);
+      var hit= false;
+      for(i in keys){
+        var key = keys [i];
+        var buttons = myShips[key];
+        console.log (buttons);
+        for (var j in buttons){
+          var button = buttons[j];
+          if(shot === button){
+            hit = true;
+            document.querySelector("h3").innerHTML= "HIT!";
+            var att= document.createAttribute("class");
+              att.value = "hitShipCell";
+              $('.Player2Board#' + shot)[0].className += "hitShipCell";
+              $('.Player2BoardhitShipCell#' + shot)[0].value="X";
+              $('.Player2BoardhitShipCell#' + shot)[0].disabled="disabled";
           }
         }
       }
-
     if (!hit) {
         document.querySelector("h3").innerHTML= "MISS";
-        document.getElementById(shot).style.background="white";
-        document.getElementById(shot).disabled="disabled";
+        $('.Player2Board#' + shot)[0].style.background="white";
+        $('.Player2Board#' + shot)[0].disabled="disabled";
     }
     var shipCount = 0;
     for (i in keys){
       var key = keys [i];
       var shipHitCount = 0;
-      for (j in MyShips[key]){
+      for (j in myShips[key]){
         if ($('#' + ships[key][j]).hasClass('Player2BoardhitShipCell')) {
           shipHitCount += 1;
         }
       }
-      if (MyShips[key].length === shipHitCount) {
+      if (myShips[key].length === shipHitCount) {
           shipCount +=1;
           console.log ("Hit Count:" + shipHitCount);
           console.log('SUNK!');
@@ -211,9 +213,13 @@ $('.Player2Board').click(function(){ //problem here
           location.reload();
         }, 3000)
       }
+
+      setTimeout(function(){
+     Player1Turn();
+     }, 1000);
+
     }
   })
-  }
 });
 
 
