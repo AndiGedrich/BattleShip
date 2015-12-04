@@ -1,11 +1,6 @@
 $(function(){
   console.log("main js loaded.");
 
-$('h1').mousemove(function(){
-    document.querySelector("h3").innerHTML= "PLAYER 1 FIRE!";
-    $('h1').off();
-  });
-
 
 $('#viewToggle').click(function(){
   console.log("toggle clicked");
@@ -20,21 +15,14 @@ $('#viewToggleOn').click(function(){
   document.getElementById('myShipLayout').style.display = "none";
   document.getElementById('viewToggleOn').id = "viewToggle";
   })
-$('#viewToggle2').click(function(){
-  console.log("toggle clicked");
-  $('#viewToggle').html("Hide my Board");
-  document.getElementById('myShipLayout').style.display = "block";
-  document.getElementById('viewToggle2').id = "viewToggleOn";
-  })
 
-$('#viewToggleOn').click(function(){
-  console.log("toggle off clicked");
-  $('#viewToggle2').html("Show my Board");
-  document.getElementById('myShipLayout2').style.display = "none";
-  document.getElementById('viewToggleOn').id = "viewToggle2";
-  })
-
-
+var myShips= {
+  AircraftCarrier:["O9", "P9", "Q9","R9","S9"],
+  Battleship:["S2", "S3", "S4","S5"],
+  Submarine:["L7", "L8", "L9"],
+  Cruiser:["N2", "N3", "N4"],
+  PatrolBoat:["K2", "K4"],
+}
 // var playerBoardSetUp = $('.shipClick').click(function(){
 //   console.log ("Ship ID:" + this.id);
 //   var shipSelected = this.id;
@@ -127,93 +115,84 @@ $('.Player1Board').click(function(){ //problem here
         }, 3000)
       }
     }
-    setTimeout(function(){
-     Player2Turn();
-     }, 1000);
-
+    computerTurn();
 
   })
 
-  //PLAYER 2 TURN
+  //COMPUTER TURN
+  var play1BoardArray;
+  var hit = false;
+    var computerTurn = function (){
+      setTimeout(function(){
+      computerShot();
+      }, 1000);
 
-var myShips= {
-  AircraftCarrier:["O9", "P9", "Q9","R9","S9"],
-  Battleship:["S2", "S3", "S4","S5"],
-  Submarine:["L7", "L8", "L9"],
-  Cruiser:["N2", "N3", "N4"],
-  PatrolBoat:["K2", "K4"],
-}
-
-var Player2Turn = function (){
-  document.querySelector('.player2Form').style.display = "block";
-  document.querySelector('.player1Form').style.display = "none";
-  player2Shot();
-}
-
-  var player2Shot = function (){
-  var keys = Object.keys(MyShips);
-  console.log ("Keys:" + keys);
-
-$('.Player2Board').click(function(){ //problem here
-    //document.querySelector("h3").innerHTML= "PLAYER 1 FIRE!";
-    document.getElementById("shotCounter").value-=1;
-    console.log ("shot value:" + this.id);
-    var shot= this.id;
-    console.log (shot);
-    var hit= false;
-    for(i in keys){
-      var key = keys [i];
-      var buttons = MyShips[key];
-      for (var j in buttons){
-        var button = buttons[j];
-        if(shot === button){
-          hit = true;
-          document.querySelector("h3").innerHTML= "HIT!";
-          var att= document.createAttribute("class");
-            att.value = "hitShipCell";
-            document.getElementById(shot).className += "hitShipCell";
-            document.getElementById(shot).value="X";
-            document.getElementById(shot).disabled="disabled";
+        var computerShot = function (){
+          play1BoardArray = []
+          $('.myBoard').each(function (i, el) {
+              play1BoardArray.push(el.id)
+          })
+        }
+        console.log(play1BoardArray);
+        var compRandom = play1BoardArray[Math.floor(Math.random()*play1BoardArray.length)]; //problems here
+        console.log ("Computer Selection:" + compRandom);
+        var ind = play1BoardArray.indexOf(compRandom);
+        console.log("index:" + ind);
+        for(i in keys){
+        var key = keys [i];
+        var buttons = myShips[key];
+        for (var j in buttons){
+          var button = buttons[j];
+          if(compRandom === button){
+            hit = true;
+            document.querySelector("h3").innerHTML= "COMPUTER HITS!";
+            var att= document.createAttribute("class");
+              att.value = "hitShipCell";
+              document.getElementById(compRandom).className += "hitShipCell";
+              document.getElementById(compRandom).value="X";
+              document.getElementById(compRandom).disabled="disabled";
+              play1BoardArray.splice(ind, 1);
+              play1BoardArray = [play1BoardArray[ind++], play1BoardArray[ind+2], play1BoardArray[ind+3], play1BoardArray[ind+8], play1BoardArray[ind--], play1BoardArray[ind-2], play1BoardArray[ind-3], play1BoardArray[ind-11]];
+              console.log (play1BoardArray);
+            }
           }
         }
+      if (!hit) {
+          document.querySelector("h3").innerHTML= "COMPUTER MISSED!";
+          document.getElementById(compRandom).style.background="white";
+          document.getElementById(compRandom).disabled="disabled";
       }
-
-    if (!hit) {
-        document.querySelector("h3").innerHTML= "MISS";
-        document.getElementById(shot).style.background="white";
-        document.getElementById(shot).disabled="disabled";
-    }
-    var shipCount = 0;
-    for (i in keys){
-      var key = keys [i];
-      var shipHitCount = 0;
-      for (j in MyShips[key]){
-        if ($('#' + ships[key][j]).hasClass('Player2BoardhitShipCell')) {
-          shipHitCount += 1;
-        }
-      }
-      if (MyShips[key].length === shipHitCount) {
-          shipCount +=1;
-          console.log ("Hit Count:" + shipHitCount);
-          console.log('SUNK!');
-          sunkShipId = key;
-          console.log ("SunkShip:" + sunkShipId);
-          document.querySelector("h3").innerHTML= key + " IS SUNK!";
-          document.getElementById(sunkShipId).src = key + "_sunk.jpg";
-          var attShip= document.createAttribute("class");
-            attShip.value = "Sunk";
-            document.getElementById(sunkShipId).className = "Sunk";
+      var shipCount = 0;
+      for (i in keys){
+        var key = keys [i];
+        var shipHitCount = 0;
+        for (j in myShips[key]){
+          if ($('#' + myShips[key][j]).hasClass('myBoardhitShipCell')) {
+            shipHitCount += 1;
           }
+        }
+        if (ships[key].length === shipHitCount) {
+            shipCount +=1;
+            console.log ("Hit Count:" + shipHitCount);
+            console.log('SUNK!');
+            sunkShipId = "my" + key;
+            console.log ("My SunkShip:" + sunkShipId);
+            document.querySelector("h3").innerHTML= "YOUR " + key + " IS SUNK!";
+            document.getElementById(sunkShipId).src = key + "_sunk.jpg";
+            var attShip= document.createAttribute("class");
+              attShip.value = "Sunk";
+              document.getElementById(sunkShipId).className = "Sunk";
+            }
 
       if (keys.length === shipCount){
-        document.querySelector("h3").innerHTML= key + "PLAYER 2 WINS!";
+        document.querySelector("h3").innerHTML= key + "COMPUTER WINS!";
         setTimeout(function () {
           location.reload();
         }, 3000)
+          }
+        }
       }
     }
-  })
-  }
 });
 
 

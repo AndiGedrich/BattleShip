@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="battleship.css">
 </head>
 <body>
-  <form>
   <h1>BATTLE SHIP</h1>
-  <h3>READY</h3>
+    <form class="player1Form">
+    <h3>READY</h3>
     <div class="hitSelector">
       <table class="shipCount" border="2" style="width: 150px; margin-left: 10px; margin-right: 10px; float: left;" >
           <tr>
@@ -201,9 +201,9 @@
             </td>
           </tr>
         </table>
-  </div>
-<div id="myShipLayout" style="display: none">
-  <table class="myGameBoard" border="2" style="width:500px;">
+    </div>
+    <div id="myShipLayout" style="display: none">
+      <table class="myGameBoard" border="2" style="width:500px;">
         <tr>
             <td><span>0</span></td>
             <td><span>K</span></td>
@@ -348,7 +348,353 @@
               <td><input type="button" class="myBoard" id="T10"></td>
             </tr>
           </table>
+    </div>
+  </form>
+
+<!--comment out -->
+
+  <form class="player2Form" style="display:none;">
+    <h3>PLAYER 2 FIRE!</h3>
+    <div class="hitSelector">
+      <table class="shipCount" border="2" style="width: 150px; margin-left: 10px; margin-right: 10px; float: left;">
+          <tr>
+            <td><h2>ENEMY SHIPS<h2></td>
+          </tr>
+          <tr>
+            <td class="shipImage"><img src="AircraftCarrier.jpg" alt="Aircraft Carrier"  style="" id="AircraftCarrier"</td>
+          </tr>
+          <tr>
+            <td class="shipImage"><img src="Battleship.jpg" alt="Battleship" style="" id="Battleship"</td>
+          </tr>
+          <tr>
+            <td class="shipImage"><img src="Submarine.jpg" alt="Submarine" style="" id="Submarine"</td>
+          </tr>
+          <tr>
+            <td class="shipImage"><img src="Cruiser.jpg" alt="Cruiser" style="" id="Cruiser"</td>
+          </tr>
+          <tr>
+            <td class="shipImage"><img src="PatrolBoat.jpg" alt="Patrol Boat" style="" id="PatrolBoat"</td>
+          </tr>
+      </table>
+          <table class="targetBoard" border="2" style="width:500px; float: left;">
+        <tr>
+            <td><span>0</span></td>
+            <td><span>K</span></td>
+            <td><span>L</span></td>
+            <td><span>M</span></td>
+            <td><span>N</span></td>
+            <td><span>O</span></td>
+            <td><span>P</span></td>
+            <td><span>Q</span></td>
+            <td><span>R</span></td>
+            <td><span>S</span></td>
+            <td><span>T</span></td>
+        </tr>
+        <tr>
+              <td><span>1</span></td>
+              <td><input type="button" class="Player2Board" id="K1"></td>
+              <td><input type="button" class="Player2Board" id="L1"></td>
+              <td><input type="button" class="Player2Board" id="M1"></td>
+              <td><input type="button" class="Player2Board" id="N1"></td>
+              <td><input type="button" class="Player2Board" id="O1"></td>
+              <td><input type="button" class="Player2Board" id="P1"></td>
+              <td><input type="button" class="Player2Board" id="Q1"></td>
+              <td><input type="button" class="Player2Board" id="R1"></td>
+              <td><input type="button" class="Player2Board" id="S1"></td>
+              <td><input type="button" class="Player2Board" id="T1"></td>
+            </tr>
+        <tr>
+              <td><span>2</span></td>
+              <td><input type="button" class="Player2Board" id="K2"></td>
+              <td><input type="button" class="Player2Board" id="L2"></td>
+              <td><input type="button" class="Player2Board" id="M2"></td>
+              <td><input type="button" class="Player2Board" id="N2"></td>
+              <td><input type="button" class="Player2Board" id="O2"></td>
+              <td><input type="button" class="Player2Board" id="P2"></td>
+              <td><input type="button" class="Player2Board" id="Q2"></td>
+              <td><input type="button" class="Player2Board" id="R2"></td>
+              <td><input type="button" class="Player2Board" id="S2"></td>
+              <td><input type="button" class="Player2Board" id="T2"></td>
+            </tr>
+        <tr>
+              <td><span>3</span></td>
+              <td><input type="button" class="Player2Board" id="K3"></td>
+              <td><input type="button" class="Player2Board" id="L3"></td>
+              <td><input type="button" class="Player2Board" id="M3"></td>
+              <td><input type="button" class="Player2Board" id="N3"></td>
+              <td><input type="button" class="Player2Board" id="O3"></td>
+              <td><input type="button" class="Player2Board" id="P3"></td>
+              <td><input type="button" class="Player2Board" id="Q3"></td>
+              <td><input type="button" class="Player2Board" id="R3"></td>
+              <td><input type="button" class="Player2Board" id="S3"></td>
+              <td><input type="button" class="Player2Board" id="T3"></td>
+            </tr>
+        <tr>
+              <td><span>4</span></td>
+              <td><input type="button" class="Player2Board" id="K4"></td>
+              <td><input type="button" class="Player2Board" id="L4"></td>
+              <td><input type="button" class="Player2Board" id="M4"></td>
+              <td><input type="button" class="Player2Board" id="N4"></td>
+              <td><input type="button" class="Player2Board" id="O4"></td>
+              <td><input type="button" class="Player2Board" id="P4"></td>
+              <td><input type="button" class="Player2Board" id="Q4"></td>
+              <td><input type="button" class="Player2Board" id="R4"></td>
+              <td><input type="button" class="Player2Board" id="S4"></td>
+              <td><input type="button" class="Player2Board" id="T4"></td>
+            </tr>
+        <tr>
+              <td><span>5</span></td>
+              <td><input type="button" class="Player2Board" id="K5"></td>
+              <td><input type="button" class="Player2Board" id="L5"></td>
+              <td><input type="button" class="Player2Board" id="M5"></td>
+              <td><input type="button" class="Player2Board" id="N5"></td>
+              <td><input type="button" class="Player2Board" id="O5"></td>
+              <td><input type="button" class="Player2Board" id="P5"></td>
+              <td><input type="button" class="Player2Board" id="Q5"></td>
+              <td><input type="button" class="Player2Board" id="R5"></td>
+              <td><input type="button" class="Player2Board" id="S5"></td>
+              <td><input type="button" class="Player2Board" id="T5"></td>
+            </tr>
+        <tr>
+              <td><span>6</span></td>
+              <td><input type="button" class="Player2Board" id="K6"></td>
+              <td><input type="button" class="Player2Board" id="L6"></td>
+              <td><input type="button" class="Player2Board" id="M6"></td>
+              <td><input type="button" class="Player2Board" id="N6"></td>
+              <td><input type="button" class="Player2Board" id="O6"></td>
+              <td><input type="button" class="Player2Board" id="P6"></td>
+              <td><input type="button" class="Player2Board" id="Q6"></td>
+              <td><input type="button" class="Player2Board" id="R6"></td>
+              <td><input type="button" class="Player2Board" id="S6"></td>
+              <td><input type="button" class="Player2Board" id="T6"></td>
+            </tr>
+        <tr>
+              <td><span>7</span></td>
+              <td><input type="button" class="Player2Board" id="K7"></td>
+              <td><input type="button" class="Player2Board" id="L7"></td>
+              <td><input type="button" class="Player2Board" id="M7"></td>
+              <td><input type="button" class="Player2Board" id="N7"></td>
+              <td><input type="button" class="Player2Board" id="O7"></td>
+              <td><input type="button" class="Player2Board" id="P7"></td>
+              <td><input type="button" class="Player2Board" id="Q7"></td>
+              <td><input type="button" class="Player2Board" id="R7"></td>
+              <td><input type="button" class="Player2Board" id="S7"></td>
+              <td><input type="button" class="Player2Board" id="T7"></td>
+            </tr>
+        <tr>
+              <td><span>8</span></td>
+              <td><input type="button" class="Player2Board" id="K8"></td>
+              <td><input type="button" class="Player2Board" id="L8"></td>
+              <td><input type="button" class="Player2Board" id="M8"></td>
+              <td><input type="button" class="Player2Board" id="N8"></td>
+              <td><input type="button" class="Player2Board" id="O8"></td>
+              <td><input type="button" class="Player2Board" id="P8"></td>
+              <td><input type="button" class="Player2Board" id="Q8"></td>
+              <td><input type="button" class="Player2Board" id="R8"></td>
+              <td><input type="button" class="Player2Board" id="S8"></td>
+              <td><input type="button" class="Player2Board" id="T8"></td>
+            </tr>
+        <tr>
+              <td><span>9</span></td>
+              <td><input type="button" class="Player2Board" id="K9"></td>
+              <td><input type="button" class="Player2Board" id="L9"></td>
+              <td><input type="button" class="Player2Board" id="M9"></td>
+              <td><input type="button" class="Player2Board" id="N9"></td>
+              <td><input type="button" class="Player2Board" id="O9"></td>
+              <td><input type="button" class="Player2Board" id="P9"></td>
+              <td><input type="button" class="Player2Board" id="Q9"></td>
+              <td><input type="button" class="Player2Board" id="R9"></td>
+              <td><input type="button" class="Player2Board" id="S9"></td>
+              <td><input type="button" class="Player2Board" id="T9"></td>
+            </tr>
+        <tr>
+              <td><span>10</span></td>
+              <td><input type="button" class="Player2Board" id="K10"></td>
+              <td><input type="button" class="Player2Board" id="L10"></td>
+              <td><input type="button" class="Player2Board" id="M10"></td>
+              <td><input type="button" class="Player2Board" id="N10"></td>
+              <td><input type="button" class="Player2Board" id="O10"></td>
+              <td><input type="button" class="Player2Board" id="P10"></td>
+              <td><input type="button" class="Player2Board" id="Q10"></td>
+              <td><input type="button" class="Player2Board" id="R10"></td>
+              <td><input type="button" class="Player2Board" id="S10"></td>
+              <td><input type="button" class="Player2Board" id="T10"></td>
+            </tr>
+          </table>
+        <table class="myScoreBoard" border="2" style="width: 150px; margin-left: 10px; float: left;" >
+          <tr>
+            <td><h2>MISSILE COUNT</h2></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="shotCounter" value="25"></td>
+          </tr>
+          <tr>
+            <td><h2>MY SHIPS</h2></td>
+          </tr>
+          <tr>
+            <td class="transparentBkg">
+              <span class="shipClick"><img src="AircraftCarrier.jpg" alt="Aircraft Carrier"  id="myAircraftCarrier" data-locations='[0,0,0,0,0]'></span>
+              <span class="shipClick"><img src="PatrolBoat.jpg" alt="Patrol Boat" id="myPatrolBoat" data-locations='[0,0]'></span>
+              <span class="shipClick"><img src="Battleship.jpg" alt="Battleship" id="myBattleship" data-locations='[0,0,0,0]'></span>
+              <span class="shipClick"><img src="Cruiser.jpg" alt="Cruiser" id="myCruiser" data-locations='[0,0,0]'></span>
+              <span class="shipClick"><img src="Submarine.jpg" alt="Submarine" id="mySubmarine" data-locations='[0,0,0]'></span><span class="shipClick"><button id="rotate-button" data-direction="0">Rotate Ship</button></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="transparentBkg">
+              <button type="button" id="viewToggle2">VIEW MY BOARD</button>
+            </td>
+          </tr>
+        </table>
   </div>
+  <div id="myShipLayout2" style="display: none">
+      <table class="targetBoard" border="2" style="width:500px; float: left;">
+        <tr>
+            <td><span>0</span></td>
+            <td><span>A</span></td>
+            <td><span>B</span></td>
+            <td><span>C</span></td>
+            <td><span>D</span></td>
+            <td><span>E</span></td>
+            <td><span>F</span></td>
+            <td><span>G</span></td>
+            <td><span>H</span></td>
+            <td><span>I</span></td>
+            <td><span>J</span></td>
+        </tr>
+        <tr>
+              <td><span>1</span></td>
+              <td><input type="button" class="Player1Board" id="A1"></td>
+              <td><input type="button" class="Player1Board" id="B1"></td>
+              <td><input type="button" class="Player1Board" id="C1"></td>
+              <td><input type="button" class="Player1Board" id="D1"></td>
+              <td><input type="button" class="Player1Board" id="E1"></td>
+              <td><input type="button" class="Player1Board" id="F1"></td>
+              <td><input type="button" class="Player1Board" id="G1"></td>
+              <td><input type="button" class="Player1Board" id="H1"></td>
+              <td><input type="button" class="Player1Board" id="I1"></td>
+              <td><input type="button" class="Player1Board" id="J1"></td>
+            </tr>
+        <tr>
+              <td><span>2</span></td>
+              <td><input type="button" class="Player1Board" id="A2"></td>
+              <td><input type="button" class="Player1Board" id="B2"></td>
+              <td><input type="button" class="Player1Board" id="C2"></td>
+              <td><input type="button" class="Player1Board" id="D2"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="E2"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="F2"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="G2"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="H2"></td>
+              <td><input type="button" class="Player1Board" id="I2"></td>
+              <td><input type="button" class="Player1Board" id="J2"></td>
+            </tr>
+        <tr>
+              <td><span>3</span></td>
+              <td><input type="button" class="Player1Board" id="A3"></td>
+              <td><input type="button" class="Player1Board" id="B3"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="C3"></td>
+              <td><input type="button" class="Player1Board" id="D3"></td>
+              <td><input type="button" class="Player1Board" id="E3"></td>
+              <td><input type="button" class="Player1Board" id="F3"></td>
+              <td><input type="button" class="Player1Board" id="G3"></td>
+              <td><input type="button" class="Player1Board" id="H3"></td>
+              <td><input type="button" class="Player1Board" id="I3"></td>
+              <td><input type="button" class="Player1Board" id="J3"></td>
+            </tr>
+        <tr>
+              <td><span>4</span></td>
+              <td><input type="button" class="Player1Board" id="A4"></td>
+              <td><input type="button" class="Player1Board" id="B4"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="C4"></td>
+              <td><input type="button" class="Player1Board" id="D4"></td>
+              <td><input type="button" class="Player1Board" id="E4"></td>
+              <td><input type="button" class="Player1Board" id="F4"></td>
+              <td><input type="button" class="Player1Board" id="G4"></td>
+              <td><input type="button" class="Player1Board" id="H4"></td>
+              <td><input type="button" class="Player1Board" id="I4"></td>
+              <td><input type="button" class="Player1Board" id="J4"></td>
+            </tr>
+        <tr>
+              <td><span>5</span></td>
+              <td><input type="button" class="Player1Board" id="A5"></td>
+              <td><input type="button" class="Player1Board" id="B5"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="C5"></td>
+              <td><input type="button" class="Player1Board" id="D5"></td>
+              <td><input type="button" class="Player1Board" id="E5"></td>
+              <td><input type="button" class="Player1Board" id="F5"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="G5"></td>
+              <td><input type="button" class="Player1Board" id="H5"></td>
+              <td><input type="button" class="Player1Board" id="I5"></td>
+              <td><input type="button" class="Player1Board" id="J5"></td>
+            </tr>
+        <tr>
+              <td><span>6</span></td>
+              <td><input type="button" class="Player1Board" id="A6"></td>
+              <td><input type="button" class="Player1Board" id="B6"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="C6"></td>
+              <td><input type="button" class="Player1Board" id="D6"></td>
+              <td><input type="button" class="Player1Board" id="E6"></td>
+              <td><input type="button" class="Player1Board" id="F6"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="G6"></td>
+              <td><input type="button" class="Player1Board" id="H6"></td>
+              <td><input type="button" class="Player1Board" id="I6"></td>
+              <td><input type="button" class="Player1Board" id="J6"></td>
+            </tr>
+        <tr>
+              <td><span>7</span></td>
+              <td><input type="button" class="Player1Board" id="A7"></td>
+              <td><input type="button" class="Player1Board" id="B7"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="C7"></td>
+              <td><input type="button" class="Player1Board" id="D7"></td>
+              <td><input type="button" class="Player1Board" id="E7"></td>
+              <td><input type="button" class="Player1Board" id="F7"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="G7"></td>
+              <td><input type="button" class="Player1Board" id="H7"></td>
+              <td><input type="button" class="Player1Board" id="I7"></td>
+              <td><input type="button" class="Player1Board" id="J7"></td>
+            </tr>
+        <tr>
+              <td><span>8</span></td>
+              <td><input type="button" class="Player1Board" id="A8"></td>
+              <td><input type="button" class="Player1Board" id="B8"></td>
+              <td><input type="button" class="Player1Board" id="C8"></td>
+              <td><input type="button" class="Player1Board" id="D8"></td>
+              <td><input type="button" class="Player1Board" id="E8"></td>
+              <td><input type="button" class="Player1Board" id="F8"></td>
+              <td><input type="button" class="Player1Board" id="G8"></td>
+              <td><input type="button" class="Player1Board" id="H8"></td>
+              <td><input type="button" class="Player1Board" id="I8"></td>
+              <td><input type="button" class="Player1Board" id="J8"></td>
+            </tr>
+        <tr>
+              <td><span>9</span></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="A9"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="B9"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="C9"></td>
+              <td><input type="button" class="Player1Board" id="D9"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="E9"></td>
+              <td><input type="button" class="Player1Board" id="F9"></td>
+              <td><input type="button" class="Player1Board" id="G9"></td>
+              <td><input type="button" class="Player1Board" id="H9"></td>
+              <td><input type="button" class="Player1Board" id="I9"></td>
+              <td><input type="button" class="Player1Board" id="J9"></td>
+            </tr>
+        <tr>
+              <td><span>10</span></td>
+              <td><input type="button" class="Player1Board" id="A10"></td>
+              <td><input type="button" class="Player1Board" id="B10"></td>
+              <td><input type="button" class="Player1Board" id="C10"></td>
+              <td><input type="button" class="Player1Board" id="D10"></td>
+              <td class="occupied"><input type="button" class="Player1Board" id="E10"></td>
+              <td><input type="button" class="Player1Board" id="F10"></td>
+              <td><input type="button" class="Player1Board" id="G10"></td>
+              <td><input type="button" class="Player1Board" id="H10"></td>
+              <td><input type="button" class="Player1Board" id="I10"></td>
+              <td><input type="button" class="Player1Board" id="J10"></td>
+            </tr>
+          </table>
+  </div>
+</form>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="battleship.js"></script>
   </body>
